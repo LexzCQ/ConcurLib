@@ -1,4 +1,4 @@
-# ConcurrencyLib
+# ConcurLib
 Android concurrency code invocation library 
 
 This library is made to simplify invocation of code in different threads.
