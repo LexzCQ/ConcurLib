@@ -4,34 +4,33 @@ import android.os.Process;
 
 import java.util.concurrent.*;
 
-/*
+/**
 * Singleton class for default executor supplier
 */
 public class DefaultExecutorSupplier{
-    /*
+    /**
     * Number of cores to decide the number of threads
     */
     public static final int NUMBER_OF_CORES = Runtime.getRuntime().availableProcessors();
 
-    /*
+    /**
     * thread pool executor for background tasks
     */
     private final ThreadPoolExecutor mForBackgroundTasks;
-    /*
+    /**
     * thread pool executor for light weight background tasks
     */
     private final ThreadPoolExecutor mForLightWeightBackgroundTasks;
-    /*
+    /**
     * thread pool executor for main thread tasks
     */
     private final Executor mMainThreadExecutor;
-    /*
+    /**
     * an instance of DefaultExecutorSupplier
     */
     private static DefaultExecutorSupplier sInstance;
 
-
-    /*
+    /**
         * returns the instance of DefaultExecutorSupplier
         */
     public static DefaultExecutorSupplier getInstance() {
@@ -42,7 +41,8 @@ public class DefaultExecutorSupplier{
         }
         return sInstance;
     }
-    /*
+
+    /**
     * constructor for  DefaultExecutorSupplier
     */
     private DefaultExecutorSupplier() {
@@ -74,21 +74,22 @@ public class DefaultExecutorSupplier{
             // setting the thread pool executor for mMainThreadExecutor;
             mMainThreadExecutor = new MainThreadExecutor();
         }
-    /*
+
+    /**
     * returns the thread pool executor for background task
     */
     public ThreadPoolExecutor forBackgroundTasks() {
         return mForBackgroundTasks;
     }
 
-    /*
+    /**
     * returns the thread pool executor for light weight background task
     */
     public ThreadPoolExecutor forLightWeightBackgroundTasks() {
         return mForLightWeightBackgroundTasks;
     }
 
-    /*
+    /**
     * returns the thread pool executor for main thread task
     */
     public Executor forMainThreadTasks() {

@@ -54,7 +54,7 @@ runOnUiThread(new Runnable() {
 DefaultExecutorSupplier.getInstance().forMainThreadTasks().execute(new Runnable() {
                     @Override
                     public void run() {
-                        textView.setText("a");
+                        someView.someMethod(someValue);
                     }
                 });
 ```
